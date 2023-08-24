@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+body {
+	background-color: #9fb6ae;
+	font-family: 'Poppins', sans-serif;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.header {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: #f2f6f5;
+	width: 100vw;
+}
+.main-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+section {
+	display: grid;
+	place-items: center;
+	align-content: center;
+	min-height: 100vh;
+	min-width: 100vw;
+}
+
+h1 {
+	color: #c05d2d;
+}
+h2 {
+	color: #372b25;
+}
+h3 {
+	color: #018a33;
+}
+
+.hidden {
+	opacity: 0;
+	transform: blur(5px);
+	transform: translateX(-100%);
+	transition: all 1s;
+}
+
+@media (prefers-reduced-motion) {
+	.hidden {
+		transition: none;
+	}
+}
+
+.show {
+	opacity: 1;
+	filter: blur(0);
+	transform: translateX(0);
+}
+
+button {
+	border: 2px solid #ddd;
+	border-radius: 0px;
+	padding: 20px;
+	margin: 20px;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease-in-out;
+}
+
+button:hover {
+	transform: scale(1.05);
+	filter: brightness(1.2) contrast(1);
+}
+
+/* ROW DIV */
+.album-container {
+	display: flex;
+	justify-content: center;
+	align-items: stretch;
+	flex-flow: row wrap;
+	height: 500px;
+	width: 100%;
+}
+
+/* PHOTO CARDS */
+.photo-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	animation: appearAnimation 2s linear;
+	height: 80%;
+	width: 200px;
+	margin: 10px;
+	padding: 10px;
+	border: 1px solid #ffffff;
+	background-color: #9fb6ae;
+}
+
+@keyframes appearAnimation {
+	0% {
+		opacity: 0;
+		transform: translateX(-80vw);
+	}
+	60% {
+		opacity: 0;
+		transform: translateX(-80vw);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+/* SECTIONS */
+section:nth-child(1) {
+	background-color: #9fb6ae;
+}
+section:nth-child(2) {
+	background-color: #c38950;
+}
+section:nth-child(3) {
+	background-color: #c05d2d;
+}
+
+/*SECTION 2*/
+
+.container {
+	display: grid;
+	place-items: center;
+	align-content: center;
+	min-height: 100vh;
+	min-width: 100vw;
+}
+
+#dog-image,
+#dog-video {
+	max-width: 100%;
+	height: 500px;
+	border: 3px solid #f2f6f5;
+	border-radius: 20px;
+}
+
+#next-button {
+	padding: 10px 20px;
+	font-size: 16px;
+	border: none;
+	background-color: #007bff;
+	cursor: pointer;
+	color: #f2f6f5;
+}
+
+#next-button:hover {
+	background-color: #0056b3;
+}
+
+#next-button {
+	align-self: flex-end;
+}
+
+/* SECTION 3 */
+.bysykkel_logo {
+	height: 6rem;
+	width: auto;
+	margin: 0;
+}
+
+b {
+	color: #018a33;
+}
+
+.city_search {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	background-color: #f2f6f5;
+	height: 25rem;
+	width: 25rem;
+	border-radius: 20px;
+}
+
+/* FIXED FOOTER */
+.fixed-footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 80vw;
+	height: 0.8rem;
+	background-color: #372b25;
+	padding: 5px;
+	margin: 0;
+	text-align: center;
+	box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2);
+	border: 1px solid #f2f6f5;
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+.fixed-footer:hover {
+	background-color: #0056b3;
+}
+p {
+	margin: 0;
+	color: #f2f6f5;
+}

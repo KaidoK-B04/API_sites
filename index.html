@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />
+		<script type="module" src="js_teacher/main.js" defer></script>
+		<link rel="stylesheet" href="styles.css" />
+		<title>Prosjektoppgave API Modul C</title>
+	</head>
+	<body>
+		<div class="header">
+			<div><h1>API modul C</h1></div>
+			<div>
+				<button id="sectionOne">JSON</button>
+				<button id="sectionTwo">DOGS</button>
+				<button id="SectionThree">SYKKEL</button>
+			</div>
+		</div>
+		<div id="main-container">
+			<section id="sectionOne">
+				<div>
+					<h2>Jsonplaceholder test API</h2>
+				</div>
+				<div id="album-container" class="album-container hidden"></div>
+			</section>
+
+			<section class="hidden" id="sectionTwo">
+				<div class="container">
+					<h2>Random dog API</h2>
+					<div id="image-container">
+						<img id="dog-image" alt="Random Dog Image" />
+						<video id="dog-video" controls style="display: none">
+							<source id="video-source" type="video/mp4" />
+							Your browser does not support the video tag.
+						</video>
+					</div>
+					<button id="next-button">Next Doggo</button>
+				</div>
+			</section>
+
+			<section class="hidden" id="sectionThree">
+				<h2>Citybikes API</h2>
+				<div class="city_search">
+					<img class="bysykkel_logo" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Bergen-Bysykkel-Logo.svg" />
+					<label for="cities"><b>Bysykkel</b></label>
+					<select id="cities">
+						<option value="">Select a city</option>
+					</select>
+					<div id="results"></div>
+				</div>
+			</section>
+		</div>
+		<footer class="fixed-footer"><p>Next API</p></footer>
+	</body>
+</html>
