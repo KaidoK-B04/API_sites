@@ -111,6 +111,12 @@ const nextButton = document.getElementById('next-button');
 
 nextButton.addEventListener('click', fetchRandomDog);
 
+let userInteracted = false;
+
+document.addEventListener('click', () => {
+	userInteracted = true;
+});
+
 function fetchRandomDog() {
 	fetch('https://random.dog/woof.json')
 		.then((response) => response.json())
@@ -123,7 +129,10 @@ function fetchRandomDog() {
 				dogVideo.style.display = 'block';
 				videoSource.src = imageUrl;
 				dogVideo.load();
-				dogVideo.play();
+
+				if (userInteracted) {
+					dogVideo.play();
+				}
 			} else {
 				dogVideo.style.display = 'none';
 				dogImage.style.display = 'block';
