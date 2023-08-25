@@ -24,7 +24,6 @@
 // 	const sectionTwoButton = document.getElementById('sectionTwo');
 // 	const sectionThreeButton = document.getElementById('sectionThree');
 
-// 	navIndexButton.addEventListener('click', scrollToTop);
 // 	sectionOneButton.addEventListener('click', scrollToSection);
 // 	sectionTwoButton.addEventListener('click', scrollToSection);
 // 	sectionThreeButton.addEventListener('click', scrollToSection);
@@ -89,27 +88,14 @@ fetch(apiUrl)
 		console.error('Error fetching photos:', error);
 	});
 
-// ANIMATION FOR SECTION ELEMENTS
-const observer = new IntersectionObserver((entries) => {
-	entries.forEach((entry) => {
-		if (entry.isIntersecting) {
-			entry.target.classList.add('show');
-		} else {
-			entry.target.classList.remove('show');
-		}
-	});
-});
-const hiddenElements = document.querySelectorAll('.hidden');
-hiddenElements.forEach((el) => observer.observe(el));
-
-//SECTION 2 RANDOME DOG
+//SECTION 2 RANDOM DOG
 
 const dogImage = document.getElementById('dog-image');
 const dogVideo = document.getElementById('dog-video');
 const videoSource = document.getElementById('video-source');
-const nextButton = document.getElementById('next-button');
+const nextDogButton = document.getElementById('next-button');
 
-nextButton.addEventListener('click', fetchRandomDog);
+nextDogButton.addEventListener('click', fetchRandomDog);
 
 let userInteracted = false;
 
@@ -122,12 +108,16 @@ function fetchRandomDog() {
 		.then((response) => response.json())
 		.then((data) => {
 			const imageUrl = data.url;
+			console.log('Fetched image URL:', imageUrl);
+
 			const isVideo = imageUrl.endsWith('.mp4');
 
 			if (isVideo) {
 				dogImage.style.display = 'none';
 				dogVideo.style.display = 'block';
 				videoSource.src = imageUrl;
+				console.log('Setting video source:', videoSource.src);
+
 				dogVideo.load();
 
 				if (userInteracted) {
@@ -143,6 +133,7 @@ function fetchRandomDog() {
 			console.error('Error fetching random dog:', error);
 		});
 }
+
 fetchRandomDog();
 
 // SECTION 3 SYKKEL API
@@ -187,3 +178,16 @@ citiesSelect.addEventListener('change', () => {
 		resultsDiv.innerHTML = '';
 	}
 });
+
+// ANIMATION FOR SECTION ELEMENTS
+// const observer = new IntersectionObserver((entries) => {
+// 	entries.forEach((entry) => {
+// 		if (entry.isIntersecting) {
+// 			entry.target.classList.add('show');
+// 		} else {
+// 			entry.target.classList.remove('show');
+// 		}
+// 	});
+// });
+// const hiddenElements = document.querySelectorAll('.hidden');
+// hiddenElements.forEach((el) => observer.observe(el));

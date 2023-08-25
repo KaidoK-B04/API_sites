@@ -25,7 +25,6 @@ body {
 section {
 	display: grid;
 	place-items: center;
-	align-content: center;
 	min-height: 100vh;
 	min-width: 100vw;
 }
@@ -38,25 +37,6 @@ h2 {
 }
 h3 {
 	color: #018a33;
-}
-
-.hidden {
-	opacity: 0;
-	transform: blur(5px);
-	transform: translateX(-100%);
-	transition: all 1s;
-}
-
-@media (prefers-reduced-motion) {
-	.hidden {
-		transition: none;
-	}
-}
-
-.show {
-	opacity: 1;
-	filter: blur(0);
-	transform: translateX(0);
 }
 
 button {
@@ -73,6 +53,39 @@ button:hover {
 	filter: brightness(1.2) contrast(1);
 }
 
+/* SECTIONS */
+
+/* .hidden {
+	opacity: 0;
+	transform: blur(5px);
+	transform: translateX(-100%);
+	transition: all 1s;
+}
+
+@media (prefers-reduced-motion) {
+	.hidden {
+		transition: none;
+	}
+}
+
+.show {
+	opacity: 1;
+	filter: blur(0);
+	transform: translateX(0);
+} */
+
+section:nth-child(1) {
+	background-color: #9fb6ae;
+}
+section:nth-child(2) {
+	background-color: #c38950;
+}
+section:nth-child(3) {
+	background-color: #c05d2d;
+}
+
+/* SECTION 1 */
+
 /* ROW DIV */
 .album-container {
 	display: flex;
@@ -81,6 +94,7 @@ button:hover {
 	flex-flow: row wrap;
 	height: 500px;
 	width: 100%;
+	margin-bottom: 60px;
 }
 
 /* PHOTO CARDS */
@@ -113,23 +127,14 @@ button:hover {
 	}
 }
 
-/* SECTIONS */
-section:nth-child(1) {
-	background-color: #9fb6ae;
-}
-section:nth-child(2) {
-	background-color: #c38950;
-}
-section:nth-child(3) {
-	background-color: #c05d2d;
-}
-
 /*SECTION 2*/
 
 .container {
-	display: grid;
-	place-items: center;
-	align-content: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+
 	min-height: 100vh;
 	min-width: 100vw;
 }
@@ -137,7 +142,7 @@ section:nth-child(3) {
 #dog-image,
 #dog-video {
 	max-width: 100%;
-	height: 500px;
+	height: 400px;
 	border: 3px solid #f2f6f5;
 	border-radius: 20px;
 }
@@ -149,14 +154,11 @@ section:nth-child(3) {
 	background-color: #007bff;
 	cursor: pointer;
 	color: #f2f6f5;
+	align-self: center;
 }
 
 #next-button:hover {
-	background-color: #0056b3;
-}
-
-#next-button {
-	align-self: flex-end;
+	background-color: blue;
 }
 
 /* SECTION 3 */
@@ -203,7 +205,7 @@ b {
 }
 
 .fixed-footer:hover {
-	background-color: #0056b3;
+	background-color: blue;
 }
 p {
 	margin: 0;
